@@ -36,6 +36,11 @@ public class History {
     @Column(name="returned_date")
     private String returnedDate;
 
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "product_id", referencedColumnName = "product_id", insertable = false, updatable = false)
+	private Product product;
+
     @Column(name="title")
     private String title;
 
