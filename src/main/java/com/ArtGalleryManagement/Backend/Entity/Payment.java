@@ -18,6 +18,10 @@ public class Payment {
 	@Column(name="payment_id")
     private Long paymentId;
 	
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+@JoinColumn(name = "product_id", referencedColumnName = "product_id", insertable = false, updatable = false)
+private Product product;
 	@Column(name="user_email")
     private String userEmail;
 	@Column(name="amount")
