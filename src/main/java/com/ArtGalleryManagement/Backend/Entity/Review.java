@@ -25,6 +25,10 @@ public class Review {
     @Column(name = "rating")
     private double rating;
 
+@ManyToOne(fetch = FetchType.LAZY)
+@JoinColumn(name = "product_id", referencedColumnName = "product_id", insertable = false, updatable = false)
+private Product product;
+
     @Column(name = "product_id")
     private Long productId;
 
